@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Website</title>
+    <style>
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #formdiv {
+        margin: 20px;
+      }
+      textarea {
+        width: 1280px;
+        height: 800px;
+        background: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{input_headline}}</h1>
+    <button onclick="window.location.href='/'">LandingPage</button>
+    <button onclick="window.location.href='/htmltest'">Html Test</button>
+    <button onclick="window.location.href='/pictest'">Picture Test</button>
+    <button onclick="window.location.href='/printtest'">Print Test</button>
+    <button onclick="window.location.href='/synctest'">Sync Test</button>
+    <button onclick="window.location.href='/getparam/abc'">GET Request</button>
+
+    <div id="formdiv">
+      <h1>Post Form Request</h1>
+      <form method="post" action="/postparam">
+        <input type="text" name="parameter1" value="ParameterValue1" />
+        <input type="hidden" name="parameter2" value="ParameterValue2" />
+        <input type="submit" value="POST Request" />
+      </form>
+    </div>
+    <textarea>{{input_text}}</textarea>
+  </body>
+</html>
+
