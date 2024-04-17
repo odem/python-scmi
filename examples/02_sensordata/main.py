@@ -25,7 +25,7 @@ async def getparametertest():
 
 @app.get("/")
 async def default_page():
-    file = await read_file("html/default.html")
+    file = await read_file("html/index.html")
     return file
 
 
@@ -47,5 +47,5 @@ async def default_page():
 #     return f"You send me this (POST): 1:{param1}  {param2}"
 #
 
-app.run(host="0.0.0.0", port=4444)
+app.run(host="0.0.0.0", port=4444, debug=True)
 
