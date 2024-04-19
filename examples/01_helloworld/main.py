@@ -114,7 +114,12 @@ async def landingpage():
         /postparameter -> A simple POST request with a user parameter ( /postparam and form-arguments )
 
         Good Luck! ;-)
-        
+
+
+        def foo(parameter):
+            print("foo");
+
+        foo("abc")
     """
     return await render_template(
         "template.html", input_headline="Your Headline", input_text=text

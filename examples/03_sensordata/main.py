@@ -1,4 +1,6 @@
 from quart import Quart, render_template, request, jsonify
+
+import json
 import random
 
 app = Quart(__name__)
@@ -15,16 +17,19 @@ async def read_file(filename: str) -> str:
 
 @app.post("/sensordata")
 async def getparametertest():
-    formargs = await request.data
-    if formargs == "testtext":
-        pass
+    dataargs = await request.data
+    fourtytwo = json.loads(dataargs)
 
+    print(f"RET: {fourtytwo} {dataargs}")
     sensordata = [
         random.randint(0, 100),
         random.randint(0, 100),
         random.randint(0, 100),
+        random.randint(0, 100),
     ]
-    return "42"
+    result = json.dumps(sensordata)
+    print("JSON-DUMP: " + result)
+    return result
 
 
 @app.get("/")
